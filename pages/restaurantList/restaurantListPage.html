@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" topmargin="5" >
+<head>
+<link rel='stylesheet' type='text/css' href='css/restaurantListPageCss/restaurantList.css'>
+<script src ='javascipts/restaurantListPageJs/restaurantList.js'></script>
+<meta name='viewport' content="width=device-width, initial-scale=1.0">
+
+ </head>
+
+ <body >
+      <div >
+          <table style='width: 100%;'>
+              <tr>
+                  <td>
+                      <!--LOGO IMAGE-->
+                    <img src='../images/logoWhite.png' class="logo" id='logo_img'>
+                  </td>
+                  <td>
+                      <!--The Three buttons-->
+                      <button id='delivery_button' class="service_button" style="background-color: rgb(166, 252, 252);" onclick="service_type('delivery_button')">Delivery</button>
+                      <button id='pickup_button'  class="service_button" onclick="service_type('pickup_button')">Pickup</button>
+                      <button id='dinein_button' class="service_button" onclick="service_type('dinein_button')">Dine In</button>
+                  </td>
+                  <td>
+                    <div class="location_button" id='customer_address'>&#8962;1706 Commonwelath Ave.</div>
+                  </td>
+                  <td>
+                    <input type="text" class='input_fields' name='search' id='search' placeholder= '&#128269 Search the Restaurant' onkeyup="search_restraunt()">
+                  </td>
+                  <td><button class="signing_button">&#128722; Cart</button></td>
+                  <td><button class="signing_button" id='client_profile' onclick="window.location.assign('/login')">Sign in</button></td>
+              </tr>
+          </table>
+          <hr style="border: 1px solid rgb(219, 218, 218);">
+      </div>
+      <div class='coupons'>Coupons</div>
+     <div class='grid-container'>
+
+            <div>
+                <div class='filter_fields' id='food_index'></div>
+                <div class='filter_fields'>
+                    <p class='filter_text_heading'>Sort</p>
+                    <form class='filter_text'>
+                        <input type='checkbox' id='rating' onchange="fetch_filtered_values_rate()">
+                        <label for='rating'>Rating</label><br><br>
+
+                        <label for='delivery_time'>&nbsp;&nbsp;Delivery Time</label><br><br>
+                        <input type="range" id="dt_scale" name="vol" min="20" max="75" onchange="fetch_filtered_values_dt('dt_scale')"> <br>
+                        <label id ='dt_display' style="padding-left: 1.5cm;">20 mins</label>
+                        <br><br>
+
+
+                        <label > &nbsp;&nbsp;Food Type</label><br><br>
+                        <input type='checkbox' id="Gluten Free" name="Gluten Free" value="Gluten-Free" onchange="fetch_filtered_values_ft('Gluten Free')">
+                        <label for="vehicle1" >Gluten Free</label><br>
+
+                        <input type='checkbox' id="Vegetarian" name="Vegetarian" value="Veg" onchange="fetch_filtered_values_ft('Vegetarian')">
+                        <label for="vehicle2">Vegetarian</label><br>
+
+                        <input type='checkbox' id="Non-Veg" name="Non-Veg" value="Non-Veg" onchange="fetch_filtered_values_ft('Non-Veg')" >
+                        <label for="vehicle3">Non-Veg</label><br>
+
+                        <input type='checkbox'id="Halal" name="halal" value="halal"  onchange="fetch_filtered_values_ft('Halal')">
+                        <label for="vehicle3">Halal</label><br>
+
+                        <input type='checkbox' id="Allergy Friendly" name="Allergy-friendly" value="Allergy-friendly" onchange="fetch_filtered_values_ft('Allergy Friendly')">
+                        <label for="vehicle3">Allergy Friendly</label><br>
+
+                        <input type='checkbox' id="Mix" name="Mix" value="Mix"  onchange="fetch_filtered_values_ft('Mix')" >
+                        <label for="vehicle3">Mix</label>
+
+                    </form>
+                    <button class="signing_button" style="margin-left: 1.5cm;" onclick="display_values()">Filter</button>
+                </div>
+            </div>
+           
+           <div id='none' class='content_fields'>
+            <table style="width: auto; padding: 0.3cm;" id="the_r_display">
+           
+            </table>
+    
+            <script>
+                
+                //document.getElementById('the_r_display').innerHTML= restraunt_displayer(sample); 
+                
+                color_to_hex();
+            //document.getElementById('the_r_display').innerHTML= restraunt_displayer(sample);
+            </script>
+
+            </script>
+           </div>
+          
+             
+     </div>
+     
+ </body>
+ </html>
+</html>

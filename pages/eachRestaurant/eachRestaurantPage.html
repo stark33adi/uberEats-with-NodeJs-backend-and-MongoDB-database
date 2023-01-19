@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" topmargin="5" >
+<head>
+
+<script src='javascipts/eachRestaurantPageJs/eachRestaurantPageJs.js'></script>
+
+<link rel='stylesheet' type='text/css' href='css/eachRestaurantPageCss/eachRestaurantPageCss.css'>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+ <body >
+      <div >
+          <table style='width: 100%;'>
+              <tr>
+                <td>
+                    <img src='../images/logoWhite.png' class="logo" id='logo_img'>
+                  </td>
+                  <td>
+                      <button class="service_button">Delivery</button>
+                      <button class="service_button">Pickup</button>
+                      <button class="service_button">Dine In</button>
+                  </td>
+                  <td>
+                    <button id='customer_address' class="location_button">1706 Commonwelath Ave</button>
+                  </td>
+                  <td>
+                    <input type="text" class='input_fields' name='search' id='search' value= ' Search the Restaurant'>
+                  </td>
+                  
+                  <td> 
+                    <p class="cart_button" id='cart_item' onclick="show_cart()" >Cart</p>
+                    <div id="cart_display" class='cart_popup'>
+                        <h4>Your Cart</h4>
+                       <table id='cart_list'>
+                         
+                       </table>
+                      </div>
+
+
+                    <script>
+                    let cart_status=false;
+                    document.getElementById('cart_item').innerHTML=("Cart "+cart_total);</script>
+                </td>
+                  <td><button id='client_profile' class="signing_button" onclick="add_in_cart()">Sign in</button></td>
+              </tr>
+          </table>
+      </div>
+
+
+      <div id='restraunt_image' class='restraunt_photo'></div>
+      <script>
+          display_client_info();
+        document.getElementById('restraunt_image').style.backgroundImage="url("+sessionStorage.getItem('restrauntImage')+")";
+       
+    </script>
+
+      <div class='coupons' id='what_restraunt'>
+          <script>
+              document.getElementById('what_restraunt').innerHTML="<p id ='boomboom' class='restraunts_name'>"+sessionStorage.getItem('restrauntName')+"</p>";
+          </script>
+
+
+      </div>
+
+     <div class='grid-container'>
+
+            <div id='fil' class='filter_fields'></div>
+
+            <div id='cont' class='content_fields'>
+                    <table style="width: 100%; padding: 0.3cm;" id='item_target'>
+                        <script>
+   
+                            get_dish();
+                            //document.getElementById("item_target").innerHTML=item_displayer(tester);
+                        </script>
+                    </table>
+            </div>
+             
+     </div>
+     
+ </body>
+ </html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,46 @@
+
+input[type=text],
+input[type=password] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+input[type=text]:focus,
+input[type=password]:focus {
+    border-color: #2c94af;
+    border-width: 1px;
+    outline: 0;
+    /*-webkit-box-shadow: none;*/
+    /*box-shadow: none;*/
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(44, 148, 175,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(44, 148, 175,.6);
+}
+
+#signupPanel {
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(44, 148, 175,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(44, 148, 175,.6);
+}
+
+#signupButton {
+    background-color: #2c94af;
+    border-color: #2c94af;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+#signupButton:hover {
+    background-color: #41a999;
+    border-color: #41a999;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}

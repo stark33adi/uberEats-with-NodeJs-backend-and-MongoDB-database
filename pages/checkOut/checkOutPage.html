@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" topmargin="5">
+
+<head>
+    
+    <link rel="stylesheet" href="css/loginPageCss/loginPage.css">
+    <style>
+        table, th, td,tr {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 0.5cm;
+  font-size: medium;
+
+}
+
+    </style>
+    <script>
+        function send_cart(obj){
+            // first send the cart to server
+            const menu_portal= new XMLHttpRequest();
+            menu_portal.open('POST','http://localhost:3000/placeOrder');
+            menu_portal.setRequestHeader("Content-Type","application/json");
+            menu_portal.onload = function (){  
+                window.alert('Order Placed!!');
+                window.location.assign(checkout_page_url);
+            }
+            
+            menu_portal.send(JSON.stringify(obj));
+       
+}
+    </script>
+</head>
+<body>
+    <div class='header_logo'>
+        <div class='logo'>
+            <img class='logo' src='images/noNameLogo.png'>
+        </div>
+        <div class='logo'></div>
+    </div>
+    <div class='grid-container'>
+
+        <div id=1></div>
+        <div id=2 style="width: 12cm;">
+            <div class='a'>
+                <p>Order Summary</p>
+               <table id='cartDisplay'>
+                <script >
+        
+                    /*
+                    {"result":0,"cart":[{"itemName":"Peproni Pizza","itemQuantity":1,"itemPrice":19},
+                    {"itemName":"Veggie Paradise Pizza","itemQuantity":1,"itemPrice":20},
+                    {"itemName":"Plain Cheese Pizza","itemQuantity":1,"itemPrice":21}],
+                    "total":60,"tax":1.7999999999999998,"deliveryFee":3}
+                    */
+                    let obj = JSON.parse(sessionStorage.getItem('cart'));
+                    let grand_total=Number(obj.total)+ Number(obj.tax)+ Number(obj.deliveryFee);
+                            let display='<tr><td>Item Name</td> <td>Item Quantity</td> <td>Price($)</td></tr>';
+                            for (let item of obj['cart']){
+                                //window.alert(item);
+                                    display=display+"<tr><td>"+item.itemName+"</td><td>"+ item.itemQuantity+"</td><td>"+ item.itemPrice+"</td></tr>";
+                            }
+
+                            display=display+"<tr><td>"+"Tax : </td>"+"<td colspan='2' style=' text-align: right;'>"+ obj.tax+"</td></tr>";
+                            display=display+"<tr><td>"+"Delivey Fee : </td>"+"<td colspan='2' style=' text-align: right;'>"+ obj.deliveryFee+"</td></tr>";
+                            display=display+"<tr><td>"+"Sub Total : </td>"+"<td colspan='2' style=' text-align: right;'>"+obj.total+"</td></tr>";
+                            display=display+"<tr><td>"+"Total : </td>"+"<td colspan='2' style=' text-align: right;'>"+grand_total +"</td></tr>";
+
+                    
+                            document.getElementById("cartDisplay").innerHTML=display;
+                    
+                        </script>
+               </table>
+            </div>
+            <div class="a" style="padding-top: 0cm;">
+                <button class='signing_button' onclick="send_cart(obj)">Place Order &rarr;</button>
+            </div>
+        </div>
+        <div id=3></div>
+        <div id=4></div>
+        <div id=5></div>
+        <div id=6></div>
+        <div id=7></div>
+        <div id=8></div>
+        <div id=9></div>
+    </div>
+
+</body>
+
+</html>

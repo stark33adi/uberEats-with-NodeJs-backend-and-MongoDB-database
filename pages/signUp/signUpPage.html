@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" topmargin="5">
+
+<head>
+        <script src="javascipts/loginPageJs/loginPagePassword.js"></script>
+        <link rel="stylesheet" href="css/loginPageCss/loginPage.css">
+</head>
+
+<body style="background-image:url('/images/signUpBackGround.jpeg')" >
+    <div class='header_logo'>
+        <div class='logo'>
+            <img class='logo' src='images/noNameLogo.png'>
+        </div>
+        <div class='logo'></div>
+    </div>
+    <div class='grid-container'>
+
+        <div id=1></div>
+        <div id=2 style="width: 12cm;">
+            <div class='a' style="padding-right: 0cm;">Please Enter Below Information</div>
+            <div class='a'>
+                <form method="POST" action = '/signUpInformation'>
+                    <label  for="fname">First Name</label><br>
+                    <input class='input_fields' type="text" name='fname' id='fname' placeholder="Enter First Name"><br>
+
+                    <label for="lname">Last Name:</label><br>
+                    <input class='input_fields' type="text" name='lname' id='lname' placeholder="Enter Last Name"><br>
+
+                    <label for="email">Email Address</label><br>
+                    <input class='input_fields' type="text" name='email' id='email' placeholder="Enter Email Address"><br>
+
+                    <label for="phoneNumber">Phone Number</label><br>
+                    <input class='input_fields' type="text" name='phoneNumber' id='phoneNumber' placeholder="Enter Phone Number"><br>
+
+                    <label for="password">Password</label><br>
+                    <input class='input_fields' type="text" name='password' id='password' placeholder="Enter Password"><br>
+
+                    <label for="confirmPassword">Confirm Password</label><br>
+                    <input class='input_fields' type="text" name='confirmPassword' id='confirmPassword' placeholder="Enter Password Again"><br>
+
+                    <input class='signing_button' type="submit" value="Sign Up">
+                </form>
+            </div>
+        </div>
+        <div id=3></div>
+        <div id=4></div>
+        <div id=5></div>
+        <div id=6></div>
+        <div id=7></div>
+        <div id=8></div>
+        <div id=9></div>
+    </div>
+
+</body>
+
+</html>

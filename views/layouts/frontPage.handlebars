@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" topmargin="5" >
+<head>
+    <script src='javascipts/frontPageJs/frontPage.js'></script>
+    <link rel="stylesheet" href="css/frontPageCss/frontPage.css">
+</head>
+<body id='bod'>
+
+            <div class="header_fields">
+                <table style="width: 100%;">
+                    <tr>
+                        <td style="text-align: left;" name='logo'>
+                           <img src='../images/logoWhite.png' class="logo" id='logo_img'>
+                        </td>
+                        <td style="text-align: right; padding-top: 0cm; padding-bottom: 4cm; padding-right: 0.4cm;" name='button for signin'>
+                            <button type ='button' class='signing_button' onclick='take_to_signin_page()'>Log In</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class='address_fields'>
+                <div class='slog'><p class='slogan'>You Pay. We Get.</p></div>
+                <table>
+                    <tr>
+                        <td>
+                            <div class='address_input' style="padding-bottom:7px;">
+                                <form>
+                                    <input class='input_fields' type="text" value='Enter Delivery Address' onclick="value=' '" name='address' id='address'>
+                                </form>
+                            </div>
+                        </td>
+                        <td>  
+                            <script>
+                                var order_t=null;
+                                function change_element(id,value){
+                                            document.getElementById(id).innerHTML=value;
+                                            order_t=value;
+                                        }
+                            </script>
+                            <div class='order_type_dropdown'>
+                                <span id='order_type'>Order Type</span>
+                                <div class='dropdown-content'>
+                                    <p class='drop_options' onclick="change_element('order_type','Pick Up')">Pick Up</p>
+                                    <p class='drop_options' onclick="change_element('order_type','Delivery')">Delivery</p>
+                                    <p class='drop_options' onclick="change_element('order_type','Dine In')">Dine In</p>
+                                </div>
+                            </div>
+                        </td>
+                                
+                        <td>
+                            <div class='search_button' onclick="take_to_restraunt_page(order_t)">Search</div>
+                        </td>
+                    </tr>
+                </table>
+            
+                <div>
+                    <p class='signing_hyperlink_1'>New Here ? <a  onclick="take_to_sign_up_page()" class='signing_hyperlink_1'><u>Sign Up</u></a> </p>
+                </div>
+            </div>
+
+
+    
+</body>
+</html>
